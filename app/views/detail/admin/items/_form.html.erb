@@ -1,4 +1,4 @@
 <%= f.text_field :name %>
-<%= f.file_field :logo %>
+<%= render 'com/attachments/list_field', target: f.object.logo, f: f %>
 <%= f.select :key, options_for_select(RailsDetail.config.mapping.keys) %>
 <%= f.text_area :description %>
