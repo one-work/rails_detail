@@ -3,7 +3,7 @@
     <%= image_tag knowledge.main_image if knowledge.main_image.attached? %>
   </figure>
   <div class="media-content">
-    <h2 id="knowledge_title_<%= knowledge.id %>" class="title" data-controller="show" data-action="mouseenter->show#show mouseleave->show#hide">
+    <h2 id="knowledge_title_<%= knowledge.id %>" class="title" data-controller="show">
       <%= link_to knowledge.title, { action: 'show', id: knowledge.id } %>
       <%= button_to({ controller: 'my/knowledges', action: 'edit', id: knowledge.id, edit: 'title' }, class: 'title-edit', style: 'visibility: hidden', data: { show_target: 'item' }) do %>
         <i class="fa-light fa-pencil"></i>
@@ -12,7 +12,7 @@
         <i class="fa-light fa-trash"></i>
       <% end %>
     </h2>
-    <div class="content" id="knowledge_content_<%= knowledge.id %>" data-controller="show" data-action="mouseenter->show#show mouseleave->show#hide">
+    <div class="content" id="knowledge_content_<%= knowledge.id %>" data-controller="show">
       <%= simple_format knowledge.body %>
       <%= button_to({ controller: 'my/knowledges', action: 'edit', id: knowledge.id, edit: 'content' }, class: 'title-edit', style: 'visibility: hidden', data: { show_target: 'item' }) do %>
         <i class="fa-light fa-pencil"></i>
