@@ -8,10 +8,9 @@
       <%= model.body %>
     </div>
   </div>
-  <div data-controller="input" class="media-right">
-    <%= form_with theme: nil, model: model, url: { action: 'toggle_knowable', id: model.id }, data: { controller: 'input' } do |f| %>
-      <%= f.check_box :disabled, checked: @select_ids.include?(model.id), data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
-      <label data-action="click->input#check"></label>
+  <div class="media-right">
+    <%= form_with theme: 'switch', model: model, url: { action: 'toggle_knowable', id: model.id }, data: { controller: 'input' } do |f| %>
+      <%= f.check_box :disabled, checked: @select_ids.include?(model.id), data: { action: 'input#submit' }, id: nil %>
     <% end %>
   </div>
 </article>
