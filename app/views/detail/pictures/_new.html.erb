@@ -1,6 +1,6 @@
 <%= form_with model: @picture, url: detail_pictures_path do |f| %>
   <%= f.hidden_field :id %>
-  <%= f.file_field :file %>
+  <%= render partial: 'com/attachments/list_field', locals: { target: f.object.file, f: f } %>
   <div class="top attached inline fields">
     <div class="six wide field"></div>
     <div class="field" id="file_preview" data-controller="attachment">

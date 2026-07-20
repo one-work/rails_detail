@@ -18,7 +18,7 @@
         <%= f.label :picture, "上传配图：", :class => "control-label" %>
         <div class="controls">
           <%= image_tag(@picture.picture_url) if @picture.picture? %>
-          <%= f.file_field :picture %>
+          <%= render partial: 'com/attachments/list_field', locals: { target: f.object.picture, f: f } %>
           <%= f.hidden_field :picture_cache %>
         </div>
       </div>
