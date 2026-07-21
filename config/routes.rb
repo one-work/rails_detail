@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.app.routes.draw do
   namespace 'detail', defaults: { business: 'detail' } do
     resources :knowledges, only: [:index, :show] do
       collection do
